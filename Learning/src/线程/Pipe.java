@@ -1,0 +1,69 @@
+package 线程;
+
+import java.io.IOException;
+import java.io.PipedReader;
+import java.io.PipedWriter;
+
+/**
+ * 管道
+ * JDK提供了PipedWriter、 PipedReader、 PipedOutputStream、 PipedInputStream
+ * 使用管道多半与I/O流相关。当我们一个线程需要先另一个线程发送一个信息（比如字符串）或者文件等等时，就需要使用管道通信了。
+ */
+public class Pipe {
+    static class ReaderThread implements Runnable {
+        private PipedReader reader;
+
+        public ReaderThread(PipedReader reader) {
+            this.reader = reader;
+        }
+
+        @Override
+        public void run() {
+            System.out.println("this is reader");
+            int receive = 0;
+            try {
+                while ((receive = reader.read()) != -1) {
+                    System.out.print((char)receive);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    static class WriterThread implements Runnable {
+
+        private PipedWriter writer;
+
+        @Override
+        public void run() {
+            int receive = 0;
+            System.out.println("this is writer");
+            try {
+                writer.write("test");
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        public WriterThread(PipedWriter writer) {
+            this.writer = writer;
+        }
+    }
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        PipedWriter writer = new PipedWriter();
+        PipedReader reader = new PipedReader();
+        writer.connect(reader); // 这里注意一定要连接，才能通信
+
+        new Thread(new ReaderThread(reader)).start();
+        Thread.sleep(1000);
+        new Thread(new WriterThread(writer)).start();
+    }
+}
