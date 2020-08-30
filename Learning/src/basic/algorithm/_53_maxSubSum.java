@@ -16,7 +16,7 @@ import java.util.List;
  * 如果当前组的和>0,则要考虑要不要与上一组的正数合并：如果当前组的和+上一组的正数>当前组的正数和，则合并为一组。如[4]与[-1,2,1]的和大于[3],则4,-1,2,1合并在一起
  * 最后取出值最大的那一个组
  */
-public class _53_最大子序和 {
+public class _53_maxSubSum {
 
     public static void main(String[] args) {
         //可测试的数据：

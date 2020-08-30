@@ -7,6 +7,11 @@ public class Student implements Person {
 		int a = 10;
 		System.out.println(Student.a);
 	}
+	public static int swim() {
+		int a = 33645;
+		System.out.println(a);
+		return a;
+	}
 	public static void main(String[] args) {
 		Student stu = new Student();
 		stu.a = 2;
@@ -17,4 +22,7 @@ public class Student implements Person {
 		String aString = "aa";
 	}
 
+	public Student() {
+		System.out.println("run constructor...");
+	}
 }

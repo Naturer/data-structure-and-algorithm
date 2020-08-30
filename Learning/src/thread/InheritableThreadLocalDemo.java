@@ -1,4 +1,4 @@
-package 线程;
+package thread;
 
 /**
  * InheritableThreadLocal，子线程可以获取主线程，即main线程的副本值。

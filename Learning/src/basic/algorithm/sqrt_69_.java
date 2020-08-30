@@ -1,6 +1,6 @@
 package basic.algorithm;
 
-public class _69_平方根 {
+public class sqrt_69_ {
     public static void main(String[] args) {
         System.out.println(Math.sqrt(2147395599));
 //        System.out.println(sqrt(2147395599));

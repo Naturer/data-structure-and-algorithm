@@ -1,4 +1,4 @@
-package 线程;
+package thread;
 
 import java.io.IOException;
 import java.io.PipedReader;

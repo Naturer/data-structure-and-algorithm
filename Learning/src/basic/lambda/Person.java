@@ -1,4 +1,4 @@
-package lambda;
+package basic.lambda;
 
 import java.util.Date;
 
@@ -10,7 +10,14 @@ public class Person<T> implements Comparable<T>{
     
     public Date birthday = null;
 
-    
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public Person() {
+    }
+
     public Date getBirthday() {
         return birthday;
     }

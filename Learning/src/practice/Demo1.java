@@ -1,5 +1,26 @@
+package practice;
+
+import lesson01.function.Student;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.IntSupplier;
+import java.util.function.Supplier;
+
 public class Demo1 {
     public static void main(String[] args) {
+//        test1();
+        test2();
+    }
+
+    private static void test2() {
+        Supplier<Student> su = Student::new;
+        su.get();
+        IntSupplier swim = Student::swim;
+        swim.getAsInt();
+    }
+
+    private static void test1() {
         ListNode head = null;
         boolean isOpen = false;
 
@@ -12,6 +33,7 @@ public class Demo1 {
 
 //        System.out.println(removeNthFromEnd(head, 7));
     }
+
     private static ListNode removeNthFromEnd(ListNode head, int n) {
         assert head != null;
         return head.next;

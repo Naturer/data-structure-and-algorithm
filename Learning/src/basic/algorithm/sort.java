@@ -5,7 +5,7 @@ import java.util.Random;
 
 import util.Times;
 
-public class 排序 {
+public class sort {
 
     public static void main(String[] args) {
         int[] a = {22,5,3,14,31,30,36,48,50,4,38,36,4,33,19,7,23,5};

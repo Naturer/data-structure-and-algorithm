@@ -1,4 +1,4 @@
-package 线程;
+package thread;
 
 public class ThreadGroupDemo {
     public static void main(String[] args) {

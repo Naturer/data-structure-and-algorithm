@@ -1,4 +1,4 @@
-package 线程;
+package thread;
 
 public class Test2 {
     static volatile int j = 0;

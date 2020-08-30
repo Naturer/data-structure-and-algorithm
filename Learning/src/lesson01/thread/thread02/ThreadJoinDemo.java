@@ -47,6 +47,6 @@ class ThreadB extends Thread {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("线程" + thread.getName() +"执行完毕");
+        System.out.println("thread" + thread.getName() +"执行完毕");
     }
 }

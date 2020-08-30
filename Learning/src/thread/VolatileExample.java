@@ -1,4 +1,4 @@
-package 线程;
+package thread;
 
 public class VolatileExample {
     int     x = 0;

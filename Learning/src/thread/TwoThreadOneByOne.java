@@ -1,38 +1,36 @@
-package 线程;
-/**
- * 需求：让线程A输出0，然后线程B输出1，再然后线程A输出2…以此类推
- */
-public class Signal {
-    private static volatile int signal = 0;
+package thread;
 
+public class TwoThreadOneByOne {
+    private static  int signal = 0;
+    private static  boolean flag;
     static class ThreadA implements Runnable {
         @Override
         public void run() {
-            while (signal < 5) {
-                if (signal % 2 == 0) {
+            while (signal < 100) {
+                if (flag) {
                     System.out.println("threadA: " + signal);
-//                    synchronized (this) {
-                        signal = signal +1;
-//                    }
+                    synchronized (this){
+                        signal++;
+                    }
+                    flag = false;
                 }
             }
         }
     }
-
     static class ThreadB implements Runnable {
         @Override
         public void run() {
-            while (signal < 5) {
-                if (signal % 2 == 1) {
+            while (signal < 100) {
+                if (!flag) {
                     System.out.println("threadB: " + signal);
-                    synchronized (this) {
+                    synchronized (this){
                         signal++;
                     }
+                    flag = true;
                 }
             }
         }
     }
-
     public static void main(String[] args) throws InterruptedException {
         new Thread(new ThreadA()).start();
         Thread.sleep(1000);

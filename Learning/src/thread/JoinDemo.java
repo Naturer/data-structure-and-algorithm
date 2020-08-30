@@ -1,4 +1,4 @@
-package 线程;
+package thread;
 
 public class JoinDemo extends Thread {
     int    i;
