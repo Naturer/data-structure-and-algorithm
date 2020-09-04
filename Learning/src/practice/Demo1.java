@@ -10,7 +10,13 @@ import java.util.function.Supplier;
 public class Demo1 {
     public static void main(String[] args) {
 //        test1();
-        test2();
+//        test2();
+        teat3();
+    }
+
+    private static void teat3() {
+        String a = "hel";
+        System.out.println(a.substring(3, a.length()));
     }
 
     private static void test2() {
