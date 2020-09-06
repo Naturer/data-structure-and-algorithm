@@ -1,9 +1,11 @@
-package practice;
+package practice.domain;
 
 import java.util.Date;
 import java.util.Objects;
 
 public class Student {
+
+    Job job;
 
     private Integer id;
 
@@ -83,6 +85,14 @@ public class Student {
         this.sex = sex;
     }
 
+    public Job getJob() {
+        return job;
+    }
+
+    public void setJob(Job job) {
+        this.job = job;
+    }
+
     public Student() {
     }
 
@@ -126,9 +136,10 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", sex='" + sex + '\'' +
+                "job=" + job +
+                ", id=" + id +
+                ", name=" + name +
+                ", sex=" + sex +
                 ", age=" + age +
                 ", score=" + score +
                 ", birthday=" + birthday +

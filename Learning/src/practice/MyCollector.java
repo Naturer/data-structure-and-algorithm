@@ -1,5 +1,7 @@
 package practice;
 
+import practice.domain.Student;
+
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;

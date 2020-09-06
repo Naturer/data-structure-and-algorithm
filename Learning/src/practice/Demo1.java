@@ -15,8 +15,8 @@ public class Demo1 {
     }
 
     private static void teat3() {
-        String a = "hel";
-        System.out.println(a.substring(3, a.length()));
+        practice.domain.Student student = new practice.domain.Student();
+        System.out.println(student);
     }
 
     private static void test2() {
