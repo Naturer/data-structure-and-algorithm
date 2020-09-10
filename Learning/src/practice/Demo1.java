@@ -6,12 +6,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.IntSupplier;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 public class Demo1 {
     public static void main(String[] args) {
 //        test1();
 //        test2();
-        teat3();
+//        teat3();
+        test4();
+    }
+
+    private static void test4() {
+        List<String> receivers = new ArrayList<>();
+        receivers.add("1");
+        receivers.add("1");
+        receivers.add("2");
+        receivers.add("1");
+        receivers = receivers.stream().distinct().collect(Collectors.toList());
+        System.out.println(receivers);
+
     }
 
     private static void teat3() {
