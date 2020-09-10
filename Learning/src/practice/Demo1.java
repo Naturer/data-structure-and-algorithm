@@ -3,7 +3,11 @@ package practice;
 import lesson01.function.Student;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -13,7 +17,30 @@ public class Demo1 {
 //        test1();
 //        test2();
 //        teat3();
-        test4();
+//        test4();
+        test5();
+    }
+
+    private static void test5() {
+//定义ConcurrentHashMap
+        Map map = new HashMap();
+        for (int i = 0; i < 10; i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+//多线程下的put可以放心使用
+                    map.put(UUID.randomUUID().toString(),
+                            "1");
+                }
+            }).start();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(map);
+        System.out.println(map.size());
     }
 
     private static void test4() {
