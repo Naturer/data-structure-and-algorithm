@@ -2,11 +2,13 @@ package practice;
 
 import lesson01.function.Student;
 import org.apache.commons.lang.StringUtils;
+import sun.security.provider.MD5;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +41,42 @@ public class Demo1 {
 //        teat3();
 //        test4();
 //        test5();
-        test6();
+//        test6();
+//        test7();
+//        test8();
+        test9();
+    }
+
+    private static void test9() {
+    }
+
+    private static void test8() {
+        HashMap<Integer, Integer> m = new LinkedHashMap<>(10, 0.75f, true);
+        m.put(3, 11);
+        m.put(1, 12);
+        m.put(5, 23);
+        m.put(2, 22);
+        m.put(3, 26);
+        m.get(5);
+        for (Map.Entry e : m.entrySet()) {
+            System.out.println(e.getKey());
+        }
+    }
+
+    private static void test7() {
+        HashMap<String, Integer> m = new HashMap<>();
+        m.put("你是谁呀", 11);
+        m.put("呵呵哒", 11);
+        m.put("9", 11);
+        m.put("nihao", 11);
+        m.put("1", 12);
+        m.put("500", 23);
+        m.put("6", 23);
+        m.put("2", 22);
+        System.out.println(m);
+        for (Map.Entry e : m.entrySet()) {
+            System.out.println(e.getKey());
+        }
     }
 
     private static void test6() {

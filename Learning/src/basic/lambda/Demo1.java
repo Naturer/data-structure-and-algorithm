@@ -1,11 +1,24 @@
 package basic.lambda;
 
+import org.junit.Test;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Demo1 {
+
+    @Test
+    public void test1 () {
+        System.out.println(1111);
+        ArrayList<Person> list = new ArrayList<Person>();
+        List<Person> collect = list.stream().filter((p) -> "11as".equals(p.getName())).collect(Collectors.toList());
+        System.out.println(collect);
+        System.out.println(222);
+    }
 
     public static void main(String[] args) throws ParseException {
         ArrayList<Person> list = new ArrayList<Person>();
