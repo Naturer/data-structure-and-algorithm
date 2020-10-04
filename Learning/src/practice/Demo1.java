@@ -6,6 +6,8 @@ import sun.security.provider.MD5;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -18,6 +20,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionHandler;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -44,10 +48,45 @@ public class Demo1 {
 //        test6();
 //        test7();
 //        test8();
-        test9();
+//        int[] a = {1, 2,3,4};
+//        test9(a, 4, 4);
+
+        //计数器，这里用信号量实现
+        final Semaphore semaphore = new Semaphore(3);
+        //定时器，到点清零
+        ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+        service.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(111);
+            }
+        },3000,1000,TimeUnit.MILLISECONDS); // 等10s，才会第一次释放。
+
     }
 
-    private static void test9() {
+    private static void test9(int[] data, int n, int k) {
+
+// 调用方式：
+// int[] a = {1, 2, 3, 4}; printPermutations(a, 4, 4);
+// k表示要处理的子数组的数据个数
+            if (k == 1) {
+                for (int i = 0; i < n; ++i) {
+                    System.out.print(data[i] + " ");
+                }
+                System.out.println();
+            }
+
+            for (int i = 0; i < k; ++i) {
+                int tmp = data[i];
+                data[i] = data[k-1];
+                data[k-1] = tmp;
+
+                test9(data, n, k - 1);
+
+                tmp = data[i];
+                data[i] = data[k-1];
+                data[k-1] = tmp;
+            }
     }
 
     private static void test8() {

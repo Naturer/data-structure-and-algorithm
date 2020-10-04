@@ -22,7 +22,4 @@ public class Student implements Person {
 		String aString = "aa";
 	}
 
-	public Student() {
-		System.out.println("run constructor...");
-	}
 }
