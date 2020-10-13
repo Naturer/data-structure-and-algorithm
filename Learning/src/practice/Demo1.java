@@ -1,6 +1,7 @@
 package practice;
 
 import lesson01.function.Student;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import sun.security.provider.MD5;
 
@@ -60,7 +61,9 @@ public class Demo1 {
     private static void test11() {
         String repFileRelaId = "";
         List<String> strings = Collections.singletonList(repFileRelaId);
-        System.out.println(strings);
+
+        System.out.println(CollectionUtils.isEmpty(strings));
+        System.out.println(CollectionUtils.isEmpty(new ArrayList<>()));
 
     }
 
