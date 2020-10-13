@@ -14,6 +14,8 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 import java.util.UUID;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
@@ -50,17 +52,33 @@ public class Demo1 {
 //        test8();
 //        int[] a = {1, 2,3,4};
 //        test9(a, 4, 4);
+//        test10();
+        test11();
 
-        //计数器，这里用信号量实现
-        final Semaphore semaphore = new Semaphore(3);
-        //定时器，到点清零
-        ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
-        service.scheduleAtFixedRate(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(111);
-            }
-        },3000,1000,TimeUnit.MILLISECONDS); // 等10s，才会第一次释放。
+    }
+
+    private static void test11() {
+        String repFileRelaId = "";
+        List<String> strings = Collections.singletonList(repFileRelaId);
+        System.out.println(strings);
+
+    }
+
+    private static void test10() {
+        TreeMap map = new TreeMap();
+        map.put(1,"yyh");
+        map.put(2,"yyh2");
+        map.put(3,"yyh3");
+        map.put(4,"yyh4");
+
+        SortedMap sortedMap = map.tailMap(2);
+        System.out.println("map"+map);
+        System.out.println("sortedMap"+sortedMap);
+
+//        map.remove(4);
+        map.put(1,"yyh5");
+        System.out.println("map"+map);
+        System.out.println("sortedMap"+sortedMap);
 
     }
 
