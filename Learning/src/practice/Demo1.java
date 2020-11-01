@@ -69,19 +69,19 @@ public class Demo1 {
 
     private static void test10() {
         TreeMap map = new TreeMap();
-        map.put(1,"yyh");
-        map.put(2,"yyh2");
-        map.put(3,"yyh3");
-        map.put(4,"yyh4");
+        map.put(1, "yyh");
+        map.put(2, "yyh2");
+        map.put(3, "yyh3");
+        map.put(4, "yyh4");
 
         SortedMap sortedMap = map.tailMap(2);
-        System.out.println("map"+map);
-        System.out.println("sortedMap"+sortedMap);
+        System.out.println("map" + map);
+        System.out.println("sortedMap" + sortedMap);
 
 //        map.remove(4);
-        map.put(1,"yyh5");
-        System.out.println("map"+map);
-        System.out.println("sortedMap"+sortedMap);
+        map.put(1, "yyh5");
+        System.out.println("map" + map);
+        System.out.println("sortedMap" + sortedMap);
 
     }
 
@@ -90,24 +90,24 @@ public class Demo1 {
 // 调用方式：
 // int[] a = {1, 2, 3, 4}; printPermutations(a, 4, 4);
 // k表示要处理的子数组的数据个数
-            if (k == 1) {
-                for (int i = 0; i < n; ++i) {
-                    System.out.print(data[i] + " ");
-                }
-                System.out.println();
+        if (k == 1) {
+            for (int i = 0; i < n; ++i) {
+                System.out.print(data[i] + " ");
             }
+            System.out.println();
+        }
 
-            for (int i = 0; i < k; ++i) {
-                int tmp = data[i];
-                data[i] = data[k-1];
-                data[k-1] = tmp;
+        for (int i = 0; i < k; ++i) {
+            int tmp = data[i];
+            data[i] = data[k - 1];
+            data[k - 1] = tmp;
 
-                test9(data, n, k - 1);
+            test9(data, n, k - 1);
 
-                tmp = data[i];
-                data[i] = data[k-1];
-                data[k-1] = tmp;
-            }
+            tmp = data[i];
+            data[i] = data[k - 1];
+            data[k - 1] = tmp;
+        }
     }
 
     private static void test8() {
