@@ -45,15 +45,11 @@ public class Heap {
         for (int i = size / 2; i > 0; i--) {
             heapfy(a, size, i);
         }
-        System.out.println(Arrays.toString(a));
         //再排序
         for (int i = size; i >= 2; i--) {
             swap(a, 1, i);
-            System.out.println(Arrays.toString(a) + ", i = " + i);
             heapfy(a, i - 1, 1);
-            System.out.println(Arrays.toString(a) + ", i = " + i);
         }
-        System.out.println(Arrays.toString(a));
     }
 
     //从上向下的堆化
