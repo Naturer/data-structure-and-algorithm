@@ -15,6 +15,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.UUID;
@@ -43,6 +44,7 @@ public class Demo1 {
     }
 
     public static void main(String[] args) {
+        test0();
 //        test1();
 //        test2();
 //        teat3();
@@ -54,8 +56,23 @@ public class Demo1 {
 //        int[] a = {1, 2,3,4};
 //        test9(a, 4, 4);
 //        test10();
-        test11();
+//        test11();
 
+    }
+
+    private static void test0() {
+        HashMap m = new LinkedHashMap<>(10, 0.75f, true);
+        m.put(3, 11);
+        m.put(1, 12);
+        m.put(5, 23);
+        m.put(2, 22);
+        m.put(3, 26);
+        m.get(5);
+//        Set set = m.entrySet();
+//        for (Map.Entry e : m.entrySet()) {
+//            System.out.println(e.getKey());
+//        }
+        System.out.println(m);
     }
 
     private static void test11() {
