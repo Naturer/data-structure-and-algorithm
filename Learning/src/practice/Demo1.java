@@ -29,6 +29,7 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.LockSupport;
 import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -43,7 +44,7 @@ public class Demo1 {
         lru.add(3);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         test0();
 //        test1();
 //        test2();
@@ -60,19 +61,21 @@ public class Demo1 {
 
     }
 
-    private static void test0() {
-        HashMap m = new LinkedHashMap<>(10, 0.75f, true);
+    private static void test0() throws InterruptedException {
+
+// 10是初始大小，0.75是装载因子，true是表示按照访问时间排序
+        HashMap<Integer, Integer> m = new LinkedHashMap<>(3, 0.75f, true);
         m.put(3, 11);
         m.put(1, 12);
         m.put(5, 23);
         m.put(2, 22);
+
         m.put(3, 26);
         m.get(5);
-//        Set set = m.entrySet();
-//        for (Map.Entry e : m.entrySet()) {
-//            System.out.println(e.getKey());
-//        }
-        System.out.println(m);
+
+        for (Map.Entry e : m.entrySet()) {
+            System.out.println(e.getKey());
+        }
     }
 
     private static void test11() {
