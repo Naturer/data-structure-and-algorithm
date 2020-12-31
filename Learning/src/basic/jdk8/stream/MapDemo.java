@@ -1,7 +1,7 @@
-package basic.lambda.stream;
+package basic.jdk8.stream;
 
-import basic.lambda.Person;
-import basic.lambda.Student;
+import basic.jdk8.Person;
+import basic.jdk8.Student;
 
 import java.util.ArrayList;
 import java.util.List;

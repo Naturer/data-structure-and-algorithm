@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -45,7 +46,7 @@ public class Demo1 {
     }
 
     public static void main(String[] args) throws Exception {
-        test0();
+//        test0();
 //        test1();
 //        test2();
 //        teat3();
@@ -58,6 +59,28 @@ public class Demo1 {
 //        test9(a, 4, 4);
 //        test10();
 //        test11();
+        test12();
+
+    }
+
+    private static void test12() {
+        List<Integer> list = new LinkedList<>();
+        list.add(null);
+//        list.add("3");
+        list.add(1);
+        list.add(null);
+        System.out.println(list);
+
+        Map<String, Integer> map = new HashMap<>();
+        map.put(null,null);
+        map.put(null,55);
+        map.put("23",null);
+//        System.out.println(map);
+
+        Set<Integer> set = new HashSet<>();
+        set.add(null);
+        set.add(null);
+//        System.out.println(set);
 
     }
 

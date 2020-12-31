@@ -1,4 +1,4 @@
-package basic.lambda;
+package basic.jdk8;
 
 import java.util.Date;
 import java.util.Objects;
@@ -99,6 +99,14 @@ public class Student {
         this.birthday = birthday;
     }
 
+    public Student(Integer id, String name, String sex, int age, Date birthday) {
+        this.id = id;
+        this.name = name;
+        this.sex = sex;
+        this.age = age;
+        this.birthday = birthday;
+    }
+
     public Student(Integer id, String name, String sex, int age) {
         this.id = id;
         this.name = name;
@@ -126,13 +134,13 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", sex='" + sex + '\'' +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", sex='" + sex + '\'' +
                 ", age=" + age +
-                ", score=" + score +
+//                ", score=" + score +
                 ", birthday=" + birthday +
-                ", isPass=" + isPass +
+//                ", isPass=" + isPass +
                 '}';
     }
 
